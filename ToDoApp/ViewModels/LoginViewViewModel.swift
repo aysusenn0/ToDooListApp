@@ -20,23 +20,24 @@ class LoginViewViewModel: ObservableObject {
         guard validate() else {
             return
         }
-        
         //Try log in
         Auth.auth().signIn(withEmail: email, password: password)
     }
-
+    
+ // - yanlış email ve password
+    
     private func validate() -> Bool {
         errorMessage = ""
         guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
             !password.trimmingCharacters(in: .whitespaces).isEmpty
         else {
-            errorMessage = "Please fill in all fields"
+            errorMessage = "Please fill in all fields . "
             return false
         }
 
         //email@foo.com
         guard email.contains("@") && email.contains(".") else {
-            errorMessage = "Please enter a valid email"
+            errorMessage = "Please enter a valid email . "
             return false
         }
         return true

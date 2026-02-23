@@ -25,6 +25,7 @@ struct ToDoListButtonView: View {
                     .bold()
             }
         }
+        .frame(width: UIScreen.main.scale * 120 , height: UIScreen.main.scale * 16)
     }
 }
 

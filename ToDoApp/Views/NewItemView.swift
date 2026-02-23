@@ -16,6 +16,7 @@ struct NewItemView: View {
             Text("New Item")
                 .font(.system(size: 32))
                 .bold(true)
+                .padding(.top , 10)
 
             Form {
                 TextField("Title", text: $viewModel.title)
@@ -42,6 +43,7 @@ struct NewItemView: View {
                 )
             }
         }
+        .padding(.top , 30)
     }
 }
 
